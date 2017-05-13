@@ -1,0 +1,10 @@
+{
+  "name": "Lifting Tools",
+  "short_name": "Lifting Tools",
+  "icons": [],
+  "theme_color": "#009688",
+  "background_color": "#f4f4f7",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
