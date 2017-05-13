@@ -13,5 +13,15 @@
 <link href="styles.3240c586a6161bd68f06.bundle.css" rel="stylesheet"/></head>
 <body>
   <app-root></app-root>
-<script type="text/javascript" src="inline.50b7de2e0264be7a3713.bundle.js"></script><script type="text/javascript" src="polyfills.39c939ce6d269d8796c3.bundle.js"></script><script type="text/javascript" src="vendor.1b95a20766255a0e421c.bundle.js"></script><script type="text/javascript" src="main.4c002383a2730a0e02ad.bundle.js"></script></body>
+<script type="text/javascript" src="inline.50b7de2e0264be7a3713.bundle.js"></script><script type="text/javascript" src="polyfills.39c939ce6d269d8796c3.bundle.js"></script><script type="text/javascript" src="vendor.1b95a20766255a0e421c.bundle.js"></script><script type="text/javascript" src="main.4c002383a2730a0e02ad.bundle.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('Service Worker registered');
+    }).catch(function(err) {
+      console.log('Service Worker registration failed: ', err);
+    });
+  }
+</script>
+</body>
 </html>
