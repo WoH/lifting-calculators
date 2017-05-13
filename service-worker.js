@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/index.html","a658a78b15ab9baf4aaccfa37a4d1cc1"],["/inline.50b7de2e0264be7a3713.bundle.js","ab367e40f443acc78df8bb4f4d1abe83"],["/main.4c002383a2730a0e02ad.bundle.js","45f3738e67b58411b83d812f8c6c573e"],["/polyfills.39c939ce6d269d8796c3.bundle.js","e9c9878491f71e039235b9d3ace5bb0e"],["/styles.3240c586a6161bd68f06.bundle.css","3240c586a6161bd68f0698aa5237da97"],["/vendor.1b95a20766255a0e421c.bundle.js","c8c8b179723d6ab4a16cb58ca8aa5127"]];
+var precacheConfig = [["index.html","eb697ac7d3c3d833c010b1b624897419"],["inline.50b7de2e0264be7a3713.bundle.js","ab367e40f443acc78df8bb4f4d1abe83"],["main.4c002383a2730a0e02ad.bundle.js","45f3738e67b58411b83d812f8c6c573e"],["polyfills.39c939ce6d269d8796c3.bundle.js","e9c9878491f71e039235b9d3ace5bb0e"],["styles.3240c586a6161bd68f06.bundle.css","3240c586a6161bd68f0698aa5237da97"],["vendor.1b95a20766255a0e421c.bundle.js","c8c8b179723d6ab4a16cb58ca8aa5127"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 
@@ -229,7 +229,7 @@ self.addEventListener('fetch', function(event) {
 
     // If shouldRespond is still false, check to see if this is a navigation
     // request, and if so, whether the URL matches navigateFallbackWhitelist.
-    var navigateFallback = '/index.html';
+    var navigateFallback = 'index.html';
     if (!shouldRespond &&
         navigateFallback &&
         (event.request.mode === 'navigate') &&
