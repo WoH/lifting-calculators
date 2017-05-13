@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule, MdInputModule, MdCardModule } from '@angular/material';
+import {MdToolbarModule, MdInputModule, MdCardModule, MdRadioModule, MdCheckboxModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MaxCalculatorComponent } from './max-calculator/max-calculator.component';
@@ -22,7 +22,10 @@ import { WarmupCalculatorComponent } from './warmup-calculator/warmup-calculator
     MdInputModule,
     MdToolbarModule,
     BrowserAnimationsModule,
-    MdCardModule
+    MdCardModule,
+    MdRadioModule,
+    MdInputModule,
+    MdCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,30 @@
-<p>
-  warmup-calculator works!
-</p>
+<md-toolbar color="primary">
+  <span>Warmup Calculator</span>
+</md-toolbar>
+
+<md-card>
+  Select weight increment
+  <br><br>
+  <div class="radio-group">
+    <md-radio-group [(ngModel)]="selectedIncrement">
+      <md-radio-button class="radio-button" *ngFor="let increment of increments" [value]="increment">
+        {{increment}}
+      </md-radio-button>
+    </md-radio-group>
+    <md-checkbox (change)="$event.checked ? barWeight = 40 : barWeight = 20">Deadlift</md-checkbox>
+  </div>
+  <br>
+  <md-input-container>
+    <input mdInput
+           placeholder="Enter Target Weight"
+           (keyup)="targetWeight = $event.target.value">
+  </md-input-container>
+
+  <br><br>
+
+  <md-list>
+    <md-list-item *ngFor="let set of sets">
+      <h3 md-subheader>{{set.weight}} x {{set.reps}}</h3>
+    </md-list-item>
+  </md-list>
+</md-card>
