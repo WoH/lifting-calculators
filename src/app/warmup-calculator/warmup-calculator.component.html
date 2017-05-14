@@ -13,12 +13,21 @@
     </md-radio-group>
     <md-checkbox (change)="$event.checked ? barWeight = 40 : barWeight = 20">Deadlift</md-checkbox>
   </div>
-  <br>
-  <md-input-container>
-    <input mdInput
-           placeholder="Enter Target Weight"
-           (keyup)="targetWeight = $event.target.value">
-  </md-input-container>
+  <br><br>
+  <form class="rep-max-input-form">
+    <md-input-container>
+      <input mdInput
+             placeholder="Enter target weight"
+             (keyup)="weight = $event.target.value">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput type="number"
+             placeholder="Enter target repetitions"
+             min="1"
+             (keyup)="reps = $event.target.value"
+             (click)="reps = $event.target.value">
+    </md-input-container>
+  </form>
 
   <br><br>
 
