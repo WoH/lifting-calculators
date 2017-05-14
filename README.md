@@ -6,6 +6,20 @@
 - ServiceWorker for offline support
 - WebApp Manifest for convenient access after adding it to homescreen
 
+## Installation
+
+### Chrome Desktop
+
+- Navigate to the [Homepage](https://woh.github.io/lifting-calculators)
+- Click on the the '...' -> More Tools -> Add to desktop
+- Check 'open as window' and click 'ok'
+
+### Chrome Mobile
+
+- Navigate to the [Homepage](https://woh.github.io/lifting-calculators)
+- Click on the the '...' -> Add to Home screen
+- Click 'ADD'
+
 ## Technical Details
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
