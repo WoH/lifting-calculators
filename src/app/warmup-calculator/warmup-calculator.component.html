@@ -28,16 +28,17 @@
       </md-input-container>
 
       <br><br>
-
-      <md-list>
-        <md-divider></md-divider>
-        <div *ngFor="let set of sets">
-          <md-list-item >
-            <h3 md-subheader> {{set.weight}} x {{set.reps}} </h3>
-          </md-list-item>
+      <div *ngIf="sets?.length > 0">Results:
+        <md-list>
+          <div *ngFor="let set of sets">
+            <md-divider></md-divider>
+            <md-list-item >
+              <h3 md-subheader> {{set.weight}} x {{set.reps}} </h3>
+            </md-list-item>
+          </div>
           <md-divider></md-divider>
-        </div>
-      </md-list>
+        </md-list>
+      </div>
     </md-card-content>
   </md-card>
 </div>
