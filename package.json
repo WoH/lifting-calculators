@@ -1,5 +1,5 @@
 {
-  "name": "one-rm-calc",
+  "name": "Lifting-Calculator",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sw": "sw-precache --root=dist --config=sw-precache-config.js",
-    "gh-prepare": "ng build --prod --aot --base-href 'https://woh.github.io/lifting-calculators/' && npm run sw"
+    "manifest": "cp src/manifest.webapp dist",
+    "gh-prepare": "ng build --prod --aot --base-href 'https://woh.github.io/lifting-calculators/' && npm run sw && npm run manifest"
   },
   "private": true,
   "dependencies": {
