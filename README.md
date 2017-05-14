@@ -1,6 +1,6 @@
-#[Lifting Calculator](https://woh.github.io/lifting-calculators)
+# [Lifting Calculator](https://woh.github.io/lifting-calculators)
 
-##Features:
+## Features:
 - Calculate one rep / n rep max given 
 - Calculate warmup sets given target weight / reps
 - ServiceWorker for offline support
@@ -9,6 +9,10 @@
 ## Technical Details
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
+
+### Progressive Web App
+
+![Lighthouse](Lighthouse.png)
 
 ### Development server
 
