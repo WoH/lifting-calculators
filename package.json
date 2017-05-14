@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sw": "sw-precache --root=dist --config=sw-precache-config.js",
-    "manifest": "cp src/manifest.webapp dist",
+    "manifest": "cp src/manifest.json dist",
     "gh-prepare": "ng build --prod --aot --base-href 'https://woh.github.io/lifting-calculators/' && npm run sw && npm run manifest"
   },
   "private": true,
