@@ -10,3 +10,7 @@
 .selected-value {
   margin: 15px 0;
 }
+
+md-toolbar {
+  margin-top: 20px;
+}
