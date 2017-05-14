@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-max-calculator',
@@ -9,8 +9,8 @@ export class MaxCalculatorComponent {
   oneRepMax = 0;
   nRepMax = 0;
   _weight = 0;
-  _reps = 0;
-  _desiredReps = 0;
+  _reps = 1;
+  _desiredReps = 1;
 
   set weight(weight: number) {
     this._weight = weight;
@@ -25,6 +25,10 @@ export class MaxCalculatorComponent {
   set desiredReps(desiredReps: number) {
     this._desiredReps = desiredReps;
     this.recalculate();
+  }
+
+  get desiredReps() {
+    return this._desiredReps;
   }
 
   get weight() {

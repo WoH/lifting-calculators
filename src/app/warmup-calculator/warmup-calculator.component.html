@@ -1,39 +1,43 @@
-<md-toolbar color="primary">
-  <span>Warmup Calculator</span>
-</md-toolbar>
+<div class="container">
+  <md-toolbar color="primary">
+    <span>Warmup Calculator</span>
+  </md-toolbar>
+  <md-card>
+    <md-card-content>
+      Select weight increment
+      <br><br>
+      <div class="radio-group">
+        <md-radio-group [(ngModel)]="selectedIncrement" >
+          <md-radio-button class="radio-button" *ngFor="let increment of increments" [value]="increment">
+            {{increment}}
+          </md-radio-button>
+        </md-radio-group>
+        <md-checkbox (change)="$event.checked ? barWeight = 40 : barWeight = 20">Deadlift</md-checkbox>
+      </div>
+      <br><br>
+      <md-input-container>
+        <input mdInput type="number" min="1"
+               placeholder="Enter target weight"
+               (keyup)="weight = $event.target.value">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput type="number" min="1"
+               placeholder="Enter target repetitions"
+               (keyup)="reps = $event.target.value"
+               (click)="reps = $event.target.value">
+      </md-input-container>
 
-<md-card>
-  Select weight increment
-  <br><br>
-  <div class="radio-group">
-    <md-radio-group [(ngModel)]="selectedIncrement">
-      <md-radio-button class="radio-button" *ngFor="let increment of increments" [value]="increment">
-        {{increment}}
-      </md-radio-button>
-    </md-radio-group>
-    <md-checkbox (change)="$event.checked ? barWeight = 40 : barWeight = 20">Deadlift</md-checkbox>
-  </div>
-  <br><br>
-  <form class="rep-max-input-form">
-    <md-input-container>
-      <input mdInput
-             placeholder="Enter target weight"
-             (keyup)="weight = $event.target.value">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput type="number"
-             placeholder="Enter target repetitions"
-             min="1"
-             (keyup)="reps = $event.target.value"
-             (click)="reps = $event.target.value">
-    </md-input-container>
-  </form>
+      <br><br>
 
-  <br><br>
-
-  <md-list>
-    <md-list-item *ngFor="let set of sets">
-      <h3 md-subheader>{{set.weight}} x {{set.reps}}</h3>
-    </md-list-item>
-  </md-list>
-</md-card>
+      <md-list>
+        <md-divider></md-divider>
+        <div *ngFor="let set of sets">
+          <md-list-item >
+            <h3 md-subheader> {{set.weight}} x {{set.reps}} </h3>
+          </md-list-item>
+          <md-divider></md-divider>
+        </div>
+      </md-list>
+    </md-card-content>
+  </md-card>
+</div>

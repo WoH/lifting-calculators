@@ -1,36 +1,42 @@
-<md-toolbar color="primary">
-  <span>Rep Max Calculator</span>
-</md-toolbar>
-<md-card>
-  <form class="rep-max-input-form">
-    <md-input-container>
-      <input mdInput
-             placeholder="Enter Weight"
-             (keyup)="weight = $event.target.value">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput type="number"
-             placeholder="Enter Repetitions performed"
-             min="1"
-             (keyup)="reps = $event.target.value"
-             (click)="reps = $event.target.value">
-    </md-input-container>
-  </form>
-  <br>
-  <md-input-container>
-    <input mdInput placeholder="Calculated One Rep Max" disabled [value]="oneRepMax">
-  </md-input-container>
-  <br>
-  <br>
-  <form class="rep-max-output-form">
-    <md-input-container>
-      <input mdInput placeholder="Max" disabled [value]="nRepMax">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput placeholder="Desired Reps" type="number"
-             min="1"
-             (keyup)="desiredReps = $event.target.value"
-             (click)="desiredReps = $event.target.value" >
-    </md-input-container>
-  </form>
-</md-card>
+<div class="container">
+  <md-toolbar color="primary">
+    <span>Rep Max Calculator</span>
+  </md-toolbar>
+  <md-card>
+    <md-card-content>
+      <form class="rep-max-input-form">
+        <md-input-container>
+          <input mdInput
+                 type="number" min="1"
+                 placeholder="Enter Weight"
+                 (keyup)="weight = $event.target.value">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput type="number"
+                 placeholder="Enter Repetitions performed"
+                 min="1"
+                 (keyup)="reps = $event.target.value"
+                 (click)="reps = $event.target.value">
+        </md-input-container>
+      </form>
+      <br>
+      <md-input-container>
+        <input mdInput placeholder="Calculated One Rep Max" disabled [value]="oneRepMax">
+      </md-input-container>
+      <br>
+      <br>
+      <form class="rep-max-output-form">
+        <md-input-container>
+          <input mdInput placeholder="Max" disabled [value]="nRepMax">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput placeholder="Desired Reps"
+                 type="number" min="1"
+                 [value]="desiredReps"
+                 (keyup)="desiredReps = $event.target.value"
+                 (click)="desiredReps = $event.target.value" >
+        </md-input-container>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
