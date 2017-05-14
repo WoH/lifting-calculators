@@ -1,10 +1,35 @@
 {
   "name": "Lifting Calculator",
   "short_name": "Lifting Calc",
-  "icons": [],
+  "description": "A simple calculator to calculate rep maxes and warmup sets",
   "theme_color": "#3f51b5",
   "background_color": "#dbdbde",
   "start_url": "index.html",
   "display": "fullscreen",
-  "orientation": "portrait"
+  "orientation": "portrait",
+   "icons": [{
+      "src": "assets/36x36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+   }, {
+      "src": "assets/48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }, {
+      "src": "assets/72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }, {
+      "src": "assets/96x96.png",
+      "sizes": "96x96 144x144",
+      "type": "image/png"
+    }, {
+      "src": "assets/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "assets/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
 }
