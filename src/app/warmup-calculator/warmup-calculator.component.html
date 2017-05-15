@@ -18,6 +18,7 @@
       <md-input-container>
         <input mdInput type="number" min="1"
                placeholder="Enter target weight"
+               (click)="weight = $event.target.value"
                (keyup)="weight = $event.target.value">
       </md-input-container>
       <md-input-container>
