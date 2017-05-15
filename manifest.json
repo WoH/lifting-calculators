@@ -1,7 +1,7 @@
 {
   "name": "Lifting Calculator",
   "short_name": "Lifting Calc",
-  "description": "A simple calculator to calculate rep maxes and warmup sets!",
+  "description": "A simple calculator to calculate rep maxes and warmup sets",
   "theme_color": "#3f51b5",
   "background_color": "#dbdbde",
   "start_url": "index.html",
