@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-converter',
+  selector: 'app-conversion-calculator',
   templateUrl: './conversion-calculator.component.html',
   styleUrls: ['./conversion-calculator.component.css']
 })
