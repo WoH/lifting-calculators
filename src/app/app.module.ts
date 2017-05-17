@@ -15,12 +15,14 @@ import {
 import { AppComponent } from "./app.component";
 import { MaxCalculatorComponent } from "./max-calculator/max-calculator.component";
 import { WarmupCalculatorComponent } from "./warmup-calculator/warmup-calculator.component";
+import { ConversionCalculatorComponent } from './conversion-calculator/conversion-calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MaxCalculatorComponent,
-    WarmupCalculatorComponent
+    WarmupCalculatorComponent,
+    ConversionCalculatorComponent
   ],
   imports: [
     BrowserModule,

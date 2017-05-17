@@ -1,0 +1,9 @@
+md-toolbar {
+  margin-top: 20px;
+}
+
+md-card-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}

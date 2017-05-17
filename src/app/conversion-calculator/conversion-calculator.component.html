@@ -1,0 +1,23 @@
+<div class="container">
+  <md-toolbar color="primary">
+    <span>Lbs-Kg Converter</span>
+  </md-toolbar>
+  <md-card>
+    <md-card-content>
+      <md-input-container>
+        <input mdInput type="number" min="1"
+               placeholder="Enter kg"
+               [value]="weightkg"
+               (click)="weightkg = $event.target.value"
+               (keyup)="weightkg = $event.target.value">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput type="number" min="1"
+               placeholder="Enter lbs"
+               [value]="weightlbs"
+               (keyup)="weightlbs = $event.target.value"
+               (click)="weightlbs = $event.target.value">
+      </md-input-container>
+    </md-card-content>
+  </md-card>
+</div>
