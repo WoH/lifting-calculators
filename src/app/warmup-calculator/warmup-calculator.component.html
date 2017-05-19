@@ -4,20 +4,19 @@
   </md-toolbar>
   <md-card>
     <md-card-content>
-      Select weight increment
-      <br><br>
-      <div class="radio-group">
-        <md-radio-group [(ngModel)]="selectedIncrement" >
+      <section class="radio-group">
+        Select weight increment:
+        <md-radio-group [(ngModel)]="selectedIncrement">
           <md-radio-button class="radio-button" *ngFor="let increment of increments" [value]="increment">
             {{increment}}
           </md-radio-button>
         </md-radio-group>
-        <section>
-          <md-checkbox (change)="isDeadlift = $event.checked ? true : false">Deadlift</md-checkbox>
-          <md-checkbox (change)="useLbs = $event.checked ? true : false">use lbs</md-checkbox>
-        </section>
-      </div>
-      <br><br>
+      </section>
+      <section>
+        Additional options:
+        <md-checkbox (change)="isDeadlift = $event.checked ? true : false">Deadlift</md-checkbox>
+        <md-checkbox (change)="useLbs = $event.checked ? true : false">use lbs</md-checkbox>
+      </section>
       <md-input-container>
         <input mdInput type="number" min="1"
                placeholder="Enter target weight"
