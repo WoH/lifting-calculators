@@ -21,3 +21,12 @@ md-card-content {
   width: fit-content;
 }
 
+md-checkbox {
+  margin: 0 10px;
+}
+
+section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}

@@ -12,7 +12,10 @@
             {{increment}}
           </md-radio-button>
         </md-radio-group>
-        <md-checkbox (change)="$event.checked ? barWeight = 40 : barWeight = 20">Deadlift</md-checkbox>
+        <section>
+          <md-checkbox (change)="isDeadlift = $event.checked ? true : false">Deadlift</md-checkbox>
+          <md-checkbox (change)="useLbs = $event.checked ? true : false">use lbs</md-checkbox>
+        </section>
       </div>
       <br><br>
       <md-input-container>

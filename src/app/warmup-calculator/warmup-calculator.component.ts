@@ -6,15 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./warmup-calculator.component.css']
 })
 export class WarmupCalculatorComponent {
-  increments = [2.5, 5, 10];
-  _barWeight = 20;
-  _selectedIncrement = 2.5;
-  _weight: number = 0;
-  _reps: number = 1;
-  sets: [{
+  public increments = [2.5, 5, 10];
+  public sets: [{
     weight: number,
     reps: number
   }];
+  private _barWeight = 20;
+  private _useLbs = false;
+  private _isDeadlift = false;
+  private _selectedIncrement = 2.5;
+  private _weight = 20;
+  private _reps = 1;
 
   get selectedIncrement() {
     return this._selectedIncrement;
@@ -22,7 +24,7 @@ export class WarmupCalculatorComponent {
 
   set selectedIncrement(selectedIncrement: number) {
     this._selectedIncrement = selectedIncrement;
-    this.calculate();
+    this.calculateWarmup();
   }
 
   get weight() {
@@ -31,7 +33,7 @@ export class WarmupCalculatorComponent {
 
   set weight(targetWeight: number) {
     this._weight = targetWeight;
-    this.calculate();
+    this.calculateWarmup();
   }
 
   get reps() {
@@ -40,42 +42,64 @@ export class WarmupCalculatorComponent {
 
   set reps(targetWeight: number) {
     this._reps = targetWeight;
-    this.calculate();
+    this.calculateWarmup();
+  }
+
+  get barWeight() {
+    return this._barWeight;
   }
 
   set barWeight(weight: number) {
     this._barWeight = weight;
-    this.calculate();
+    this.calculateWarmup();
   }
 
-  calculate() {
-    let oneRepMax = Math.ceil(this.weight / (1.0278 - (0.0278 * this.reps)));
-    let targetWeight = Math.ceil(oneRepMax * (1.0278 - (0.0278 * 5)));
+  get isDeadlift () {
+    return this._isDeadlift;
+  }
+
+  set isDeadlift(isDeadLift: boolean) {
+    this._isDeadlift = isDeadLift;
+    this.calculateInitialWeight();
+  }
+
+  get useLbs () {
+    return this._useLbs;
+  }
+
+  set useLbs(useLbs: boolean) {
+    this._useLbs = useLbs;
+    this.calculateInitialWeight();
+  }
+
+  calculateWarmup() {
+    const oneRepMax = Math.ceil(this.weight / (1.0278 - (0.0278 * this.reps)));
+    const targetWeight = Math.ceil(oneRepMax * (1.0278 - (0.0278 * 5)));
     this.sets = [
       {
-        weight: this._barWeight,
+        weight: this.barWeight,
         reps: 5
       },
       {
-        weight: this._barWeight,
+        weight: this.barWeight,
         reps: 5
       }
     ];
     this.sets.push(
       {
-        weight: this.round(this._barWeight + 0.25 * (targetWeight - this._barWeight)),
+        weight: this.round(this.barWeight + 0.25 * (targetWeight - this.barWeight)),
         reps: 5
       }
     );
     this.sets.push(
       {
-        weight: this.round(this._barWeight + 0.5 * (targetWeight - this._barWeight)),
+        weight: this.round(this.barWeight + 0.5 * (targetWeight - this.barWeight)),
         reps: 3
       }
     );
     this.sets.push(
       {
-        weight: this.round(this._barWeight + 0.75 * (targetWeight - this._barWeight)),
+        weight: this.round(this.barWeight + 0.75 * (targetWeight - this.barWeight)),
         reps: 2
       }
     );
@@ -83,5 +107,16 @@ export class WarmupCalculatorComponent {
 
   round( weight: number, precision = this.selectedIncrement) {
     return Math.round(weight / precision) * precision;
+  }
+
+  calculateInitialWeight() {
+    let barWeight: number;
+    if(this.useLbs) {
+      barWeight = this.isDeadlift ? 95 : 45;
+    } else {
+      barWeight = this.isDeadlift ? 40 : 20;
+    }
+    this.barWeight = barWeight;
+    this.calculateWarmup();
   }
 }
